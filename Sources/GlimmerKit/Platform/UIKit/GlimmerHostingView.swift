@@ -8,20 +8,21 @@
 import UIKit
 import SwiftUI
 
-final class GlimmerHostingView: UIView {
-	override class var layerClass: AnyClass { GlimmerCoreLayer.self }
+public final class GlimmerHostingView: UIView {
+	public override class var layerClass: AnyClass { GlimmerCoreLayer.self }
 	private var core: GlimmerCoreLayer { layer as! GlimmerCoreLayer }
 
-	var paused: Bool = false {
+	public var paused: Bool = false {
 		didSet { paused ? core.stop() : core.start() }
 	}
 
-	override init(frame: CGRect) {
+	public override init(frame: CGRect) {
 		super.init(frame: frame)
 		isUserInteractionEnabled = false
 		layer.masksToBounds = true
 	}
-	required init?(coder: NSCoder) { super.init(coder: coder) }
+	
+	public required init?(coder: NSCoder) { super.init(coder: coder) }
 
 	func apply(configuration: GlimmerConfiguration, tuning: GlimmerTuning) {
 		core.cycleDuration = tuning.effectiveSpeed
@@ -36,12 +37,12 @@ final class GlimmerHostingView: UIView {
 		if window != nil, !paused { core.start() }
 	}
 
-	override func layoutSubviews() {
+	public override func layoutSubviews() {
 		super.layoutSubviews()
 		core.frame = bounds
 	}
 
-	override func didMoveToWindow() {
+	public override func didMoveToWindow() {
 		super.didMoveToWindow()
 		if window != nil, !paused { core.start() } else { core.stop() }
 	}
