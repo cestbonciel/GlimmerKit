@@ -35,7 +35,40 @@ Reduce Motion / Low Power aware · Light/Dark tone adjustment · Multi-framework
 1. **File → Add Package Dependencies…**
 2. URL: `https://github.com/cestbonciel/GlimmerKit`
 3. Product: **GlimmerKit**
+---
+## Usage - Quick Start(SwiftUI)
+```Swift
+import SwiftUI
+import GlimmerKit
 
+struct ContentView: View {
+  var body: some View {
+	  VStack(spacing: 16) {
+		  // Line placeholder
+		  SkeletonBlock(cornerRadius: 12, size: .init(width: 240, height: 14))
+
+		  // Avatar + two lines
+		  HStack(spacing: 12) {
+			  SkeletonBlock(circleWith: .init(width: 44, height: 44))
+			  VStack(alignment: .leading, spacing: 8) {
+				  SkeletonBlock(cornerRadius: 10, size: .init(width: 200, height: 12))
+				  SkeletonBlock(cornerRadius: 10, size: .init(width: 140, height: 12))
+			  }
+		  }
+
+		  // Button-like capsule
+		  SkeletonBlock(capsuleWith: .init(width: 160, height: 28))
+	  }
+	  // Pause all glimmers in this subtree if needed
+	  .glimmerPaused(false)
+
+	  // Apply shimmer to the whole section (subtle preset by default)
+	  .glimmer()
+  }
+}
+```
+
+---
 ### `Package.swift`
 ```swift
 // in Package.swift of your app/framework
@@ -48,3 +81,4 @@ targets: [
 		dependencies: ["GlimmerKit"]
 	)
 ]
+
