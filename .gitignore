@@ -1,8 +1,27 @@
+# macOS cruft
 .DS_Store
-/.build
-/Packages
-xcuserdata/
+
+# SwiftPM
+.build/
+.swiftpm/
+Package.resolved
+
+# Xcode user/workspace files
 DerivedData/
-.swiftpm/configuration/registries.json
-.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
-.netrc
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+
+# Xcode workspaces & per-user breakpoints/schemes
+*.xcworkspace/
+**/*.xcbkptlist
+**/xcschemes/xcschememanagement.plist
+
+# IDEs
+.idea/
+.vscode/
+
+# Swift coverage / logs (optional)
+*.profraw
+*.profdata
