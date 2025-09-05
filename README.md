@@ -84,4 +84,13 @@ targets: [
 		dependencies: ["GlimmerKit"]
 	)
 ]
+```
+---
 
+---
+## Example - Scenes 
+
+
+<p align="center">
+	<img src="./Sources/images/skeletonView.gif" />
+</p>
