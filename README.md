@@ -76,7 +76,7 @@ struct ContentView: View {
 ```swift
 // in Package.swift of your app/framework
 dependencies: [
-	.package(url: "https://github.com/cestbonciel/GlimmerKit.git", from: "0.1.1")
+	.package(url: "https://github.com/cestbonciel/GlimmerKit.git", branch: "main")
 ],
 targets: [
 	.target(
