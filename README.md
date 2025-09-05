@@ -33,7 +33,10 @@ Reduce Motion / Low Power aware · Light/Dark tone adjustment · Multi-framework
 
 ### Xcode
 1. **File → Add Package Dependencies…**
-2. URL: `https://github.com/cestbonciel/GlimmerKit`
+2. URL - https
+```shell
+https://github.com/cestbonciel/GlimmerKit.git
+```
 3. Product: **GlimmerKit**
 ---
 ## Usage - Quick Start(SwiftUI)
@@ -73,7 +76,7 @@ struct ContentView: View {
 ```swift
 // in Package.swift of your app/framework
 dependencies: [
-	.package(url: "https://github.com/cestbonciel/GlimmerKit", from: "1.0.0")
+	.package(url: "https://github.com/cestbonciel/GlimmerKit.git", from: "0.1.1")
 ],
 targets: [
 	.target(
